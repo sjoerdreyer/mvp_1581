@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 import pickle
+from package_folder.utils import from_number_to_flower
 
 app = FastAPI()
 
@@ -16,4 +17,6 @@ def predict(sepal_length=1,
         model = pickle.load(file)
     prediction = model.predict([[sepal_length,sepal_width,petal_length,petal_width]])
 
-    return {"prediction": str(prediction[0])}
+    pretty_prediction = from_number_to_flower(str(prediction[0]))
+
+    return {"prediction": pretty_prediction}

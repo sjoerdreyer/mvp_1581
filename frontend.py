@@ -12,7 +12,7 @@ value3 = st.slider('Select a value for Petal length',  min_value=0, max_value=4,
 value4 = st.slider('Select a value for Petal width',  min_value=0, max_value=4, value=1, step=1)
 
 # TEST LINE
-response = requests.get(f"https://mvp1581-tqemn5tozq-ew.a.run.app/predict?sepal_length={value1}&sepal_width={value2}&petal_length={value3}&petal_width={value4}").json()
+response = requests.get(f"https://mvp15812-tqemn5tozq-ew.a.run.app/predict?sepal_length={value1}&sepal_width={value2}&petal_length={value3}&petal_width={value4}").json()
 st.write("The flower belongs to class", str(response['prediction']))
 
 
